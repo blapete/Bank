@@ -44,3 +44,7 @@ class Account():
         print('       Name:', self.name)
         print('       Balance:', self.balance)
         print('       Password:', self.password)
+
+'''
+=> The AbortTransaction exception is not handled in this class, if it is raised it is passed back to the caller all the way up the stack until main.py
+'''
