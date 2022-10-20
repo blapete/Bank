@@ -37,6 +37,12 @@ class Bank():
         return newAccountNumber
 
     def openAccount(self):
+        print('*** Open Account ***')
+        userName = input('What is your username? ')
+        userStartingAmount = input('How much is your initial deposit ? ')
+        userPassword = input('Create a new password ')
+        userAccountNumber = self.createAccount(userName, userStartingAmount, userPassword)
+        print('Account created, account #: ', userAccountNumber)
 
     def closeAccount(self):
 
