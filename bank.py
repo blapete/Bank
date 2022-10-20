@@ -69,6 +69,12 @@ class Bank():
         print('Your new balance is:', theBalance)
 
     def withdraw(self):
+        print('*** Withdraw ***')
+        oAccount = self.getUsersAccount()
+        userAmount = input('Amount: ')
+        theBalance = oAccount.withdraw(userAmount)
+        print('Withdrew:', userAmount)
+        print('Your new balance is:', theBalance)
 
     def getInfo(self):
 
