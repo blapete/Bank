@@ -10,6 +10,14 @@ class Bank():
         self.phone = phone
 
     def askForValidAccountNumber(self):
+        accountNumber = input('Please provide account number: ')
+        try:
+            accountNumber = int(accountNumber)
+        except ValueError:
+            raise AbortTransaction('You must provide and integer: ')
+        if accountNumber not in self.accountsDict:
+            raise AbortTransaction('Account nuber' + str(accountNumber) + ' does not exist')
+        return accountNumber
 
     def getUsersAccount(self):
 
