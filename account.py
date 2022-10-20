@@ -20,6 +20,8 @@ class Account():
         return amount
 
     def checkPasswordMatch(self, password):
+        if password != self.password:
+            raise AbortTransaction('Incorrect password for this account')
 
     def deposit(self, amountToDeposit):
 
