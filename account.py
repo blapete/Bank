@@ -29,7 +29,8 @@ class Account():
         return self.balance
 
     def getBalance(self):
-
+        return self.balance
+        
     def withdraw(self, amountToWithdraw):
 
     # Testing
