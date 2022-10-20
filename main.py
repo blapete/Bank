@@ -3,7 +3,7 @@
 from bank import *
    
 # Bank instance
-oBank = Bank('9 to 5', '123 Michigan Ave, Chicago, IL', '(123) 456-7890')
+oBank = Bank('9 to 5', '123 Main Street, Anytown, USA', '(650) 555-1212')
 
 #Main
 while True:
@@ -18,4 +18,29 @@ while True:
     print('To make a withdrawal, press w ')
     print()
 
+    action = input('What do you want to do? ')
+    action = action.lower()
+    action = action[0]   # get first letter
+    print()
+
+    try:
+        if action == 'b':
+            oBank.balance()
+        elif action == 'c':
+            oBank.closeAccount()
+        elif action == 'd':
+            oBank.deposit()
+        elif action == 'i':
+            oBank.getInfo()
+        elif action == 'o':
+            oBank.openAccount()
+        elif action == 'q':
+            break
+        elif action == 's':
+            oBank.show()
+        elif action == 'w':
+            oBank.withdraw()
+    except AbortTransaction as error:
+        print(error)   # Print error message
+        
 print('Done')
