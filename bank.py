@@ -61,6 +61,12 @@ class Bank():
         print('Total balance:', theBalance)
 
     def deposit(self):
+        print('*** Deposit ***')
+        oAccount = self.getUsersAccount()
+        depositAmount = input('Amount: ')
+        theBalance = oAccount.deposit(depositAmount)
+        print('Deposited:', depositAmount)
+        print('Your new balance is:', theBalance)
 
     def withdraw(self):
 
