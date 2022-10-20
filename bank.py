@@ -77,6 +77,10 @@ class Bank():
         print('Your new balance is:', theBalance)
 
     def getInfo(self):
+        print('Hours:', self.hours)
+        print('Address:', self.address)
+        print('Phone:', self.phone)
+        print(len(self.accountsDict), 'account(s) open.')
 
     # For Bank admin
     def show(self):
