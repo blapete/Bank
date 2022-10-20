@@ -10,16 +10,20 @@ class Bank():
         self.phone = phone
 
     def askForValidAccountNumber(self):
-        accountNumber = input('Please provide account number: ')
+        accountNumber = input('Please provide account #: ')
         try:
             accountNumber = int(accountNumber)
         except ValueError:
-            raise AbortTransaction('You must provide and integer: ')
+            raise AbortTransaction('Must be an ineteger ')
         if accountNumber not in self.accountsDict:
-            raise AbortTransaction('Account nuber' + str(accountNumber) + ' does not exist')
+            raise AbortTransaction('There is no account # ' + str(accountNumber))
         return accountNumber
 
     def getUsersAccount(self):
+        accountNumber = self.askForValidAccountNumber()
+        oAccount = self.accountsDict[accountNumber]
+        self.askForValidPassword(oAccount)
+        return oAccount
 
     def askForValidPassword(self, oAccount):
     
