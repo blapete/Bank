@@ -45,6 +45,14 @@ class Bank():
         print('Account created, account #: ', userAccountNumber)
 
     def closeAccount(self):
+        print('*** Close Account ***')
+        userAccountNumber = self.askForValidAccountNumber()
+        oAccount = self.accountsDict[userAccountNumber]
+        self.askForValidPassword(oAccount)
+        theBalance = oAccount.getBalance()
+        print('You had', theBalance, 'in your account, returned to you.')
+        del self.accountsDict[userAccountNumber]
+        print('Your account is now closed.')
 
     def balance(self):
 
