@@ -26,6 +26,8 @@ class Bank():
         return oAccount
 
     def askForValidPassword(self, oAccount):
+        password = input('Please enter your password: ')
+        oAccount.checkPasswordMatch(password)
     
     def createAccount(self, theName, theStartingAmount, thePassword):
 
