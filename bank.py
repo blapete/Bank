@@ -30,6 +30,11 @@ class Bank():
         oAccount.checkPasswordMatch(password)
     
     def createAccount(self, theName, theStartingAmount, thePassword):
+        oAccount = Account(theName, theStartingAmount, thePassword)
+        newAccountNumber = self.nextAccountNumber
+        self.accountsDict[newAccountNumber] = oAccount
+        self.nextAccountNumber = self.nextAccountNumber + 1   # Increment for next account created
+        return newAccountNumber
 
     def openAccount(self):
 
