@@ -41,3 +41,6 @@ class Account():
 
     # Testing
     def show(self):
+        print('       Name:', self.name)
+        print('       Balance:', self.balance)
+        print('       Password:', self.password)
