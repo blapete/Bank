@@ -3,7 +3,7 @@
 from bank import *
    
 # Bank instance
-oBank = Bank('9 to 5', '123 Main Street, Anytown, USA', '(650) 555-1212')
+oBank = Bank('9 to 5', '123 Michigan Ave, Chicago, IL', '(123) 456-7890')
 
 #Main
 while True:
@@ -44,3 +44,7 @@ while True:
         print(error)   # Print error message
         
 print('Done')
+
+'''
+=> Top-level menu presented to the user
+'''
