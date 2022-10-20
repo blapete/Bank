@@ -55,6 +55,10 @@ class Bank():
         print('Your account is now closed.')
 
     def balance(self):
+        print('*** Get Balance ***')
+        oAccount = self.getUsersAccount()
+        theBalance = oAccount.getBalance()
+        print('Total balance:', theBalance)
 
     def deposit(self):
 
