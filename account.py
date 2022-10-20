@@ -24,6 +24,9 @@ class Account():
             raise AbortTransaction('Incorrect password for this account')
 
     def deposit(self, amountToDeposit):
+        amountToDeposit = self.validateAmount(amountToDeposit)
+        self.balance = self.balance + amountToDeposit
+        return self.balance
 
     def getBalance(self):
 
