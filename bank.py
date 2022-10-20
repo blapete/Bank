@@ -82,5 +82,11 @@ class Bank():
         print('Phone:', self.phone)
         print(len(self.accountsDict), 'account(s) open.')
 
-    # For Bank admin
+    # For Bank admin, could build this to require a password
     def show(self):
+        print('*** Show ***')
+        for userAccountNumber in self.accountsDict:
+            oAccount = self.accountsDict[userAccountNumber]
+            print('Account:', userAccountNumber)
+            oAccount.show()
+            print()
