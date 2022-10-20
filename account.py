@@ -21,7 +21,7 @@ class Account():
 
     def checkPasswordMatch(self, password):
         if password != self.password:
-            raise AbortTransaction('Incorrect password for this account')
+            raise AbortTransaction('Incorrect password')
 
     def deposit(self, amountToDeposit):
         amountToDeposit = self.validateAmount(amountToDeposit)
@@ -32,6 +32,12 @@ class Account():
         return self.balance
         
     def withdraw(self, amountToWithdraw):
+        amountToWithdraw = self.validateAmount(amountToWithdraw)
+        if amountToWithdraw > self.balance:
+            raise AbortTransaction('Insufficient funds')
+
+        self.balance = self.balance - amountToWithdraw
+        return self.balance
 
     # Testing
     def show(self):
